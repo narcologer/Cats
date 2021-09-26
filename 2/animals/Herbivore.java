@@ -8,7 +8,7 @@ abstract class Herbivore implements Animal {
     private String voice;
 
     protected Herbivore(String voice) {
-        this.hunger = 5;
+        this.hunger = 1;
         this.voice = voice;
     }
 
@@ -25,8 +25,12 @@ abstract class Herbivore implements Animal {
     }
 
     public String getVoice(){
-        this.hunger--;
-        return this.voice;
+        if (this.hunger==0)
+            return ("Покормите животное");
+        else {
+            this.hunger--;
+            return this.voice;
+        }
     }
 
     public int getHunger() {
