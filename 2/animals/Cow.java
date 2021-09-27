@@ -2,9 +2,10 @@ package animals;
 
 import food.Food;
 
-public class Cow extends Herbivore{
-    public Cow(String voice) {
-        super(voice);
+public class Cow extends Herbivore implements Voice{
+    String voice = "Му";
+    public Cow(int hunger) {
+        super(hunger);
     }
 
     @Override
@@ -13,7 +14,12 @@ public class Cow extends Herbivore{
     }
 
     @Override
-    public void produceVoice() {
-        System.out.println("Корова: " + this.getVoice());
+    public String getVoice() {
+        return this.voice;
+    }
+
+    @Override
+    public void setVoice(String voice) {
+        this.voice=voice;
     }
 }
