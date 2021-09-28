@@ -1,6 +1,6 @@
 package animals;
 
 public interface Voice {
-    String getVoice();
+    void getVoice();
     void setVoice(String voice);
 }

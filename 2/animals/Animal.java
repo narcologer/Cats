@@ -9,5 +9,18 @@ public abstract class Animal {
         this.hunger = hunger;
     }
 
+    public boolean chkHunger(){
+        if (this.hunger==0)
+        {
+            System.out.println("Покормите "+this.getClass().getName());
+            return false;
+        }
+        else
+        {
+            this.hunger--;
+            return true;
+        }
+    }
+
     public abstract void eat(Food food);
 }

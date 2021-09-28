@@ -2,7 +2,7 @@ package animals;
 
 import food.Food;
 
-public class Fish extends Carnivorous{
+public class Fish extends Carnivorous implements Swim{
 
     public Fish(int hunger) {
         super(hunger);
@@ -11,5 +11,11 @@ public class Fish extends Carnivorous{
     @Override
     public void eat(Food food) {
         super.eat(food);
+    }
+
+    @Override
+    public void animalSwim() {
+        if (this.chkHunger())
+            System.out.println("Рыба плавает");
     }
 }
