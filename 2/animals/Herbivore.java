@@ -3,13 +3,10 @@ package animals;
 import food.Food;
 import food.Meat;
 
-abstract class Herbivore implements Animal {
-    private int hunger;
-    private String voice;
+public class Herbivore extends Animal {
 
-    protected Herbivore(String voice) {
-        this.hunger = 1;
-        this.voice = voice;
+    protected Herbivore(int hunger) {
+        super(hunger);
     }
 
     public void eat(Food food){
@@ -23,19 +20,4 @@ abstract class Herbivore implements Animal {
             System.out.println(this.getClass().getName()+" съел "+food.getClass().getName()+". ");
         }
     }
-
-    public String getVoice(){
-        if (this.hunger==0)
-            return ("Покормите животное");
-        else {
-            this.hunger--;
-            return this.voice;
-        }
-    }
-
-    public int getHunger() {
-        return hunger;
-    }
-
-    public abstract void produceVoice();
 }

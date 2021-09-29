@@ -2,9 +2,9 @@ package animals;
 
 import food.Food;
 
-public class Echidna extends Herbivore{
-    public Echidna(String voice) {
-        super(voice);
+public class Echidna extends Herbivore implements Run{
+    public Echidna(int hunger) {
+        super(hunger);
     }
 
     @Override
@@ -13,12 +13,8 @@ public class Echidna extends Herbivore{
     }
 
     @Override
-    public String getVoice() {
-        throw new NullPointerException();
-    }
-
-    @Override
-    public void produceVoice() {
-        this.getVoice();
+    public void animalRun() {
+        if(this.chkHunger())
+            System.out.println("Ехидна бежит");
     }
 }

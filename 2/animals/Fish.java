@@ -2,10 +2,10 @@ package animals;
 
 import food.Food;
 
-public class Fish extends Carnivorous{
+public class Fish extends Carnivorous implements Swim{
 
-    public Fish(String voice) {
-        super(voice);
+    public Fish(int hunger) {
+        super(hunger);
     }
 
     @Override
@@ -14,12 +14,8 @@ public class Fish extends Carnivorous{
     }
 
     @Override
-    public String getVoice() {
-        throw new NullPointerException();
-    }
-
-    @Override
-    public void produceVoice() {
-        this.getVoice();
+    public void animalSwim() {
+        if (this.chkHunger())
+            System.out.println("Рыба плавает");
     }
 }
