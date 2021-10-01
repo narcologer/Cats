@@ -1,10 +1,12 @@
 package animals;
 
-import food.Food;
+import animals.behavior.Run;
+import animals.parent.Herbivore;
+import food.parent.Food;
 
-public class Echidna extends Herbivore implements Run{
-    public Echidna(int hunger) {
-        super(hunger);
+public class Echidna extends Herbivore implements Run {
+    public Echidna(int hunger, String name, SizeEnum size) {
+        super(hunger, name, size);
     }
 
     @Override

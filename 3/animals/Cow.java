@@ -1,11 +1,14 @@
 package animals;
 
-import food.Food;
+import animals.behavior.Run;
+import animals.behavior.Voice;
+import animals.parent.Herbivore;
+import food.parent.Food;
 
-public class Snake extends Carnivorous implements Voice, Run{
-    String voice = "ШШШ";
-    public Snake(int hunger) {
-        super(hunger);
+public class Cow extends Herbivore implements Voice, Run {
+    String voice = "Му";
+    public Cow(int hunger, String name, SizeEnum size) {
+        super(hunger, name, size);
     }
 
     @Override
@@ -27,6 +30,6 @@ public class Snake extends Carnivorous implements Voice, Run{
     @Override
     public void animalRun() {
         if(this.chkHunger())
-            System.out.println("Змея ползет");
+            System.out.println("Корова бежит");
     }
 }

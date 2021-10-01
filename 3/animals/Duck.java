@@ -1,11 +1,16 @@
 package animals;
 
-import food.Food;
+import animals.behavior.Fly;
+import animals.behavior.Run;
+import animals.behavior.Swim;
+import animals.behavior.Voice;
+import animals.parent.Herbivore;
+import food.parent.Food;
 
-public class Duck extends Herbivore implements Voice, Run, Swim, Fly{
+public class Duck extends Herbivore implements Voice, Run, Swim, Fly {
     String voice = "Кря";
-    public Duck(int hunger) {
-        super(hunger);
+    public Duck(int hunger, String name, SizeEnum size) {
+        super(hunger, name, size);
     }
 
     @Override

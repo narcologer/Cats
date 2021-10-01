@@ -1,4 +1,4 @@
-package food;
+package food.parent;
 
 public abstract class Food {
 }

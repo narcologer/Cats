@@ -1,11 +1,12 @@
 package animals;
 
-import food.Food;
+import animals.behavior.Swim;
+import animals.parent.Carnivorous;
+import food.parent.Food;
 
-public class Fish extends Carnivorous implements Swim{
-
-    public Fish(int hunger) {
-        super(hunger);
+public class Fish extends Carnivorous implements Swim {
+    public Fish(int hunger, String name, SizeEnum size) {
+        super(hunger, name, size);
     }
 
     @Override

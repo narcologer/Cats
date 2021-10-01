@@ -1,6 +1,6 @@
-import animals.Animal;
-import animals.Voice;
-import food.Food;
+import animals.parent.Animal;
+import animals.behavior.Voice;
+import food.parent.Food;
 
 public class Worker {
     public void feed(Animal animal, Food food){
