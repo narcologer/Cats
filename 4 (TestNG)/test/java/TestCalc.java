@@ -8,20 +8,20 @@ public class TestCalc {
     @DataProvider(name = "DProvider")
     public Object[][] DProvider(Method m) {
         switch (m.getName()) {
-            case "TestSum":
-                return new Object[][]{{2, 3}};
+            case "TestSumMaxInt":
+                return new Object[][]{{2147483647, 2147483647+1}};
             case "TestDiff":
                 return new Object[][]{{3, 3}};
             case "TestProd":
                 return new Object[][]{{3, 4}};
-            case "TestQuot":
-                return new Object[][]{{16.0, 8.0}};
+            case "TestQuotZero":
+                return new Object[][]{{16.0, 0.0}};
         }
         return null;
     }
         @Test(dataProvider = "DProvider")
-        public void TestSum ( int x, int y){
-            Assert.assertTrue(Calc.sum(x, y)==x+y);
+        public void TestSumMaxInt ( int x, int y){
+            Assert.assertTrue(Calc.sum(x, 1)==y);
         }
 
         @Test(dataProvider = "DProvider")
@@ -35,7 +35,7 @@ public class TestCalc {
         }
 
         @Test(dataProvider = "DProvider")
-        public void TestQuot ( double x, double y){
-            Assert.assertTrue(Calc.quot(x, y)==x/y);
+        public void TestQuotZero ( double x, double y){
+            Assert.assertTrue(Calc.quot(x, y)==0);
         }
     }
